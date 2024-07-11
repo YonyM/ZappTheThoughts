@@ -1,2 +1,2 @@
-# ZappTheThoughts
+# Zapp Through Thoughts
  
