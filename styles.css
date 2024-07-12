@@ -1,7 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@font-face {
+    font-family: 'Courier', monospace;
+    src: url('./fonts/COUR.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'RosesAre';
+    src: url('./fonts/RosesareFF0000.ttf');
+}
+
+
 body {
     background-color: #030303;
+    /*font-family: 'Press Start 2P', cursive;*/
+    
+}
+
+.container {
+
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+}
+
+.burgermenu {
+
+    position: sticky;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+
+.burgerline {
+
+    background-color: #156082;
+    width: 50px;
+    height: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.burgerline-mid {
+
+    background-color: #156082;
+    position: relative;
+    left: -3px;
+    width: 50px;
+    height: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.burgerline-bot {
+
+    background-color: #156082;
+    position: relative;
+    left: 2px;
+    width: 47px;
+    height: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+p {
+    font-family: 'Courier';
+    color: white;
 }
 
 h1 {
+    
+    font-family: 'RosesAre';
     color: white;
+}
+
+h2 {
+
+    font-family: 'RosesAre';
+    color: #156082;
+}
+
+#canvas {
+    border: 1px solid #ccc;
+}
+
+.puppencontainer {
+
+    width: 960px;
+    height: 1280px;
+    background-image: url(./images/puppe.png);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.puppe {
+
+    width: 100%;
+}
+
+.fernseher {
+    background-color: white;
+    width: 60%;
+    height: 300px;
+}
+
+.title {
+    padding-top: 50px;
+}
+
+.gallery {
+    width: 90%;
+    height: 350px;
+    background-color: white;
+
+}
+
+.poppup {
+
+    width: 150%;
+    height: 300px;
+    opacity: 0;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+
+}
+
+.content {
+    width: 40%;
+    height: 100%;
+    position: relative;
+}
+
+.poppup:hover {
+
+    opacity: 1;
 }
