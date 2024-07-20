@@ -22,9 +22,12 @@ h2 {
   color: #156082;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #030303;
-  /*font-family: 'Press Start 2P', cursive;*/
 }
 
 .container {
@@ -33,11 +36,19 @@ body {
   flex-direction: column;
 }
 
+.video-bg {
+  position: absolute;
+  z-index: -1;
+  opacity: 5%;
+  filter: blur(5px);
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
 .burgermenu {
   position: fixed;
   right: 50px;
   top: 40px;
-  background-color: #030303;
   cursor: pointer;
   z-index: 100;
 }
@@ -63,7 +74,6 @@ body {
   right: 50px;
   top: 40px;
   opacity: 0;
-  background-color: #030303;
   padding: 20px;
   width: 200px;
   height: 300px;
@@ -76,9 +86,14 @@ body {
   margin-left: 10px;
   align-items: end;
 }
-.menu nav h2 {
+.menu nav a {
+  font-size: 1.5em;
+  font-family: "RosesAre";
+  color: #156082;
   margin-bottom: 25px;
   text-align: right;
+  display: block;
+  text-decoration: none;
 }
 
 .open {
@@ -87,24 +102,37 @@ body {
   transform: translate(0, 0);
 }
 
+.vid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 23vh;
+  z-index: 0;
+  margin-right: 25px;
+  overflow: hidden;
+  width: 220px;
+  height: 160px;
+}
+.vid-container .video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .puppencontainer {
   width: 90%;
-  height: 1280px;
-  background-image: url(./images/puppe.png);
+  height: auto;
+  background-image: url(./images/Schaufensterpuppe.png);
+  background-repeat: no-repeat;
+  background-size: contain;
   background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.puppe {
-  width: 100%;
-}
-
-.fernseher {
-  background-color: white;
-  width: 60%;
-  height: 300px;
+  margin-top: 20vh;
+  z-index: 1;
 }
 
 .title {
@@ -117,7 +145,7 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 500px;
+  margin-top: 35vh;
 }
 
 .poppup {
@@ -127,12 +155,13 @@ body {
 }
 .poppup .content-line {
   position: relative;
-  left: 500px;
-  top: 41px;
+  right: 0;
+  top: 65px;
   width: 30px;
   height: 5px;
   background-color: #156082;
   transition: width 0.5s ease;
+  transform-origin: right center;
 }
 @keyframes stretch {
   from {
@@ -144,7 +173,7 @@ body {
 }
 .poppup .content {
   height: 100%;
-  padding-right: 60%;
+  padding-right: 55vw;
   position: relative;
   transition: transform 0.7s ease;
   transform: translateX(50px);
@@ -154,6 +183,7 @@ body {
   transition: transform 0.7s ease;
 }
 .poppup .content p {
+  margin-top: 50px;
   opacity: 0;
   transition: opacity 0.7s ease;
 }
@@ -169,7 +199,40 @@ body {
 }
 
 .gallery {
-  width: 90%;
-  height: 350px;
-  background-color: white;
+  display: flex;
+  width: 80%;
+  margin-top: 5vh;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+}
+
+.gallery-item {
+  flex: 1 1 calc(25% - 20px);
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.full-text {
+  width: 60%;
+}
+.full-text .chapter {
+  padding-top: 20vh;
+}
+
+footer {
+  margin-top: 40vh;
 }/*# sourceMappingURL=style.css.map */

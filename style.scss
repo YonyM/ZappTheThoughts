@@ -4,7 +4,6 @@
     font-family: 'Courier', monospace;
     src: url('./fonts/COUR.TTF') format('truetype');
 }
-
 @font-face {
     font-family: 'RosesAre';
     src: url('./fonts/RosesareFF0000.ttf');
@@ -17,43 +16,45 @@ p {
 }
 
 h1 {
-    
     font-family: 'RosesAre';
     color: white;
 }
 
 h2 {
-
     font-family: 'RosesAre';
     color: #156082;
 }
 
-
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     background-color: #030303;
-    /*font-family: 'Press Start 2P', cursive;*/
-    
 }
 
 .container {
-
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.burgermenu {
+.video-bg {
+    position: absolute;
+    z-index: -1;
+    opacity: 5%;
+    filter: blur(5px);
+    object-fit: fill;
+}
 
+.burgermenu {
     position: fixed;
     right: 50px;
     top: 40px;
-    background-color: #030303;
     cursor: pointer;
     z-index: 100;
 
     .bl {
-
         background-color: #156082;
         width: 50px;
         height: 10px;
@@ -61,13 +62,11 @@ body {
         margin-bottom: 5px;
 
         &.mid {
-
             position: relative;
             left: -3px;
         }
 
         &.bot {
-
             position: relative;
             left: 2px;
             width: 47px;
@@ -76,12 +75,10 @@ body {
 }
 
 .menu {
-
     position: fixed;
     right: 50px;
     top: 40px;
     opacity: 0;
-    background-color: #030303;
     padding: 20px;
     width: 200px;
     height: 300px;
@@ -94,9 +91,14 @@ body {
         margin-left: 10px;
         align-items: end;
 
-        h2 {
+        a {
+            font-size: 1.5em;
+            font-family: 'RosesAre';
+            color: #156082;
             margin-bottom: 25px;
             text-align: right;
+            display: block;
+            text-decoration: none;
         }
     }
 }
@@ -107,26 +109,37 @@ body {
     transform: translate(0, 0);
 }
 
-.puppencontainer {
+.vid-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 23vh;
+    z-index: 0;
+    margin-right: 25px;
+    overflow: hidden;
+    width: 220px;
+    height: 160px;
 
+    .video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.puppencontainer {
     width: 90%;
-    height: 1280px;
-    background-image: url(./images/puppe.png);
+    height: auto;
+    background-image: url(./images/Schaufensterpuppe.png);
+    background-repeat: no-repeat;
+    background-size: contain;
     background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.puppe {
-
-    width: 100%;
-}
-
-.fernseher {
-    background-color: white;
-    width: 60%;
-    height: 300px;
+    margin-top: 20vh;
+    z-index: 1;
 }
 
 .title {
@@ -136,29 +149,26 @@ body {
 }
 
 .pu-container {
-
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 500px;
+    margin-top: 35vh;
 }
 
 .poppup {
-
     height: 300px;
     display: flex;
     flex-direction: column;
 
     .content-line {
-
         position: relative;
-        left: 500px;
-        top: 41px;
+        right: 0;
+        top: 65px;
         width: 30px;
         height: 5px;
         background-color: #156082;
-
         transition: width 0.5s ease;
+        transform-origin: right center;
 
         @keyframes stretch {
             from {
@@ -167,25 +177,23 @@ body {
             to {
                 width: 200px;
             }
-        }
-
-        
+        } 
     }
 
     .content {
         height: 100%;
-        padding-right: 60%;
+        padding-right: 55vw;
         position: relative;
         transition: transform 0.7s ease;
         transform: translateX(50px);
 
         h2 {
-
             transform: translateX(60px);
             transition: transform 0.7s ease;
         }
 
         p {
+            margin-top: 50px;
             opacity: 0;
             transition: opacity 0.7s ease;
         }
@@ -193,7 +201,6 @@ body {
 }
 
 .content:hover {
-
     transform: translateX(0px);
 
     h2 {
@@ -205,10 +212,41 @@ body {
     }
 }
 
-
 .gallery {
-    width: 90%;
-    height: 350px;
-    background-color: white;
+    display: flex;
+    width: 80%;
+    margin-top: 5vh;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+}
 
+.gallery-item {
+    flex: 1 1 calc(25% - 20px);
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.full-text {
+    width: 60%;
+
+    .chapter {
+        padding-top: 20vh;
+    }
+}
+
+footer {
+    margin-top: 40vh;
 }
