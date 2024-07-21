@@ -86,7 +86,8 @@ body {
   top: 40px;
   opacity: 0;
   padding: 20px;
-  width: 200px;
+  width: -moz-max-content;
+  width: max-content;
   height: 300px;
   z-index: 90;
   transform: translate(5px, -50px);
@@ -101,7 +102,7 @@ body {
   font-size: 1.5em;
   font-family: "RosesAre";
   color: #156082;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
   text-align: right;
   display: block;
 }
